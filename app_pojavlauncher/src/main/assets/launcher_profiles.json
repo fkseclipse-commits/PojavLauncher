@@ -1,9 +1,11 @@
 {
   "profiles": {
-    "(Default)": {
-      "name": "(Default)",
-      "lastVersionId": "1.7.10"
+    "Default": {
+      "name": "DragonPlayz",
+      "lastVersionId": "1.7.10",
+      "javaArgs": "-Xverify:none -XX:+UseG1GC -XX:+AggressiveOpts"
     }
   },
-  "selectedProfile": "(Default)"
+  "selectedProfile": "Default"
 }
+
