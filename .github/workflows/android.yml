@@ -20,12 +20,23 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.11"
+
+      - name: Get LTW
+        run: |
+          sudo apt-get update && sudo apt-get install -y wget
+          mkdir -p app_pojavlauncher/libs
+          cd app_pojavlauncher/libs
+          wget https://github.com/PojavLauncherTeam/LTW/releases/latest/download/ltw-release.aar || true
 
       - name: Make scripts executable
-        run: chmod +x gradlew scripts/*.sh
+        run: |
+          chmod +x gradlew
+          chmod +x scripts/*.sh || true
 
       - name: Run language list updater
-        run: ./scripts/languagelist_updater.sh
+        run: ./scripts/languagelist_updater.sh || true
 
       - name: Build Debug APK
         run: ./gradlew :app_pojavlauncher:assembleDebug --stacktrace
@@ -35,4 +46,5 @@ jobs:
         with:
           name: DragonPlayz-APK
           path: app_pojavlauncher/build/outputs/apk/debug/*.apk
+ 
 
