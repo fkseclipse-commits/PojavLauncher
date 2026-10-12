@@ -8,9 +8,8 @@
         <item name="android:statusBarColor">@color/background_status_bar</item>
         <item name="android:navigationBarColor">@color/background_app</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
-
+        <item name="android:windowAnimationStyle">@android:style/Animation.Activity</item>
         <item name="android:textSize">@dimen/_12ssp</item>
-
     </style>
 
     <style name="LauncherFragment_Divider">
@@ -24,12 +23,12 @@
     </style>
 
     <style name="LauncherMenuButton.Universal" parent="LauncherMenuButton">
-        <item name="android:layout_height">@dimen/_66sdp</item>
+        <item name="android:layout_height">@dimen/_65dp</item>
     </style>
 
     <style name="ThickDivider">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/_1sdp</item>
+        <item name="android:layout_height">@dimen/_1xdp</item>
         <item name="android:background">?android:attr/listDivider</item>
     </style>
 
@@ -40,3 +39,4 @@
         <item name="android:layout_height">match_parent</item>
     </style>
 </resources>
+
