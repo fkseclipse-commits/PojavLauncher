@@ -23,6 +23,10 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
+      - name: Remove Duplicate Resource
+        run: |
+          rm -f app_pojavlauncher/src/main/res/drawable/ic_pojav_full.webp || true
+
       - name: Make scripts executable
         run: |
           chmod +x gradlew
