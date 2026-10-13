@@ -36,10 +36,11 @@ jobs:
         run: ./scripts/languagelist_updater.sh || true
 
       - name: Build APK with Gradle
-        run: ./gradlew :app_pojavlauncher:assembleDebug --stacktrace --continue
+        run: ./gradlew :app_pojavlauncher:assembleDebug -Pandroid.injected.testOnly=false --stacktrace
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: DragonPlayz-APK
           path: app_pojavlauncher/build/outputs/apk/debug/*.apk
+
